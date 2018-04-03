@@ -15,4 +15,9 @@ sudo su --login -c "psql -c \"CREATE DATABASE ocdsdata WITH OWNER ocdsdata ENCOD
 pip3 install virtualenv
  
 
+echo "alias db='psql -U  ocdsdata ocdsdata  -hlocalhost'" >> /home/vagrant/.bashrc
+echo "localhost:5432:ocdsdata:ocdsdata:ocdsdata" > /home/vagrant/.pgpass
+chown vagrant:vagrant /home/vagrant/.pgpass
+chmod 0600 /home/vagrant/.pgpass
+
 
