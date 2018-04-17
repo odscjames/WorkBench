@@ -9,4 +9,5 @@
     virtualenv .ve -p python3
     source .ve/bin/activate
     pip3 install -r requirements.txt 
+    pip3 install flake8
     deactivate
