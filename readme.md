@@ -8,5 +8,19 @@
     cd /vagrant
     virtualenv .ve -p python3
     source .ve/bin/activate
-    pip3 install -r requirements.txt 
+    pip3 install -r requirements.txt
     deactivate
+
+# sphinx
+
+    mkdir sphinx
+    vagrant up sphinx
+
+## sphinx for openownership-data-standard
+
+    mkdir -p sphinx/out/openownership-data-standard
+    git clone git@github.com:openownership/data-standard.git sphinx/openownership-data-standard
+    vagrant ssh sphinx
+    sphinx-build   /vagrant/openownership-data-standard/docs/ /vagrant/out/openownership-data-standard/
+
+Then see http://localhost:8080/openownership-data-standard/
