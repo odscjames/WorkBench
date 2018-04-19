@@ -21,6 +21,10 @@
 
     mkdir -p sphinx/out/openownership-data-standard
     git clone git@github.com:openownership/data-standard.git sphinx/openownership-data-standard
+    cd sphinx/openownership-data-standard
+    git submodule init
+    git submodule update
+
     vagrant ssh sphinx
     sphinx-build   /vagrant/openownership-data-standard/docs/ /vagrant/out/openownership-data-standard/
 
