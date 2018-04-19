@@ -26,6 +26,7 @@
     git submodule update
 
     vagrant ssh sphinx
-    cd /vagrant/openownership-data-standard/docs/ ;  sphinx-build  . /vagrant/out/openownership-data-standard/
+    cd /vagrant/openownership-data-standard/themes/bootstrap_build/ ;  cp src/_variables.scss  bootstrap/scss/_variables.scss ; grunt sass ;  cd /vagrant/openownership-data-standard/docs/ ;  sphinx-build  -a /vagrant/openownership-data-standard/docs/  /vagrant/out/openownership-data-standard/
+
 
 Then see http://localhost:8080/openownership-data-standard/
