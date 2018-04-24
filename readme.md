@@ -12,21 +12,3 @@
     pip3 install flake8
     deactivate
 
-# sphinx
-
-    mkdir sphinx
-    vagrant up sphinx
-
-## sphinx for openownership-data-standard
-
-    mkdir -p sphinx/out/openownership-data-standard
-    git clone git@github.com:openownership/data-standard.git sphinx/openownership-data-standard
-    cd sphinx/openownership-data-standard
-    git submodule init
-    git submodule update
-
-    vagrant ssh sphinx
-    cd /vagrant/openownership-data-standard/themes/bootstrap_build/ ;  cp src/_variables.scss  bootstrap/scss/_variables.scss ; grunt sass ;  cd /vagrant/openownership-data-standard/docs/ ;  sphinx-build  -a /vagrant/openownership-data-standard/docs/  /vagrant/out/openownership-data-standard/
-
-
-Then see http://localhost:8080/openownership-data-standard/
