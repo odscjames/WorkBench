@@ -20,3 +20,14 @@
     build-sphinx
 
 See http://localhost:8080/
+
+
+
+# 360-getdata
+
+    git clone git@github.com:ThreeSixtyGiving/getdata.git threesixtygiving-getdata
+    vagrant up 360-getdata
+    vagrant ssh 360-getdata
+    build-jekyll
+
+See http://localhost:8080/
