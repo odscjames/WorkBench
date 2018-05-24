@@ -18,7 +18,12 @@
     vagrant up open-contracting-extension_registry
     vagrant ssh open-contracting-extension_registry
     python3 /vagrant/validate.py
-    python3 /vagrant/compile.py 
+    python3 /vagrant/compile.py
+
+For standard tests:
+
+    curl -o /vagrant/test_csv.py   https://raw.githubusercontent.com/open-contracting/standard-maintenance-scripts/master/tests/test_csv.py
+
 
 # 360-standard
 
