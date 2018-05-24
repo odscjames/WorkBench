@@ -12,6 +12,14 @@
     pip3 install flake8
     deactivate
 
+# open-contracting-extension_registry
+
+    git clone git@github.com:open-contracting/extension_registry.git open-contracting-extension_registry
+    vagrant up open-contracting-extension_registry
+    vagrant ssh open-contracting-extension_registry
+    python3 /vagrant/validate.py
+    python3 /vagrant/compile.py 
+
 # 360-standard
 
     git clone git@github.com:ThreeSixtyGiving/standard.git threesixtygiving-standard
