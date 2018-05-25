@@ -19,6 +19,7 @@
     vagrant ssh open-contracting-extension_registry
     python3 /vagrant/validate.py
     python3 /vagrant/compile.py
+    runtests
 
 For standard tests:
 
