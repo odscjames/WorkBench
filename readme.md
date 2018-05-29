@@ -20,6 +20,8 @@
     python3 /vagrant/validate.py
     python3 /vagrant/compile.py
     runtests
+    flake8 --max-line-length=119
+
 
 For standard tests:
 
