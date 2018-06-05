@@ -47,3 +47,10 @@ See http://localhost:8080/
     build-jekyll
 
 See http://localhost:8080/
+
+# fireproofbox-standard
+
+
+    git clone git@github.com:OpenDataServices/fireproofbox-standard.git fireproofbox-standard
+    vagrant up fireproofbox-standard
+    vagrant ssh fireproofbox-standard
