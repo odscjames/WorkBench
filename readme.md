@@ -54,3 +54,10 @@ See http://localhost:8080/
     git clone git@github.com:OpenDataServices/fireproofbox-standard.git fireproofbox-standard
     vagrant up fireproofbox-standard
     vagrant ssh fireproofbox-standard
+
+# cove
+
+
+    git clone git@github.com:OpenDataServices/cove.git cove
+    vagrant up cove
+    vagrant ssh cove
