@@ -61,3 +61,10 @@ See http://localhost:8080/
     git clone git@github.com:OpenDataServices/cove.git cove
     vagrant up cove
     vagrant ssh cove
+
+# odscjames-docson
+
+    git clone git@github.com:odscjames/docson.git odscjames-docson
+    vagrant up odscjames-docson
+    vagrant ssh odscjames-docson
+    
