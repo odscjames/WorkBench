@@ -67,4 +67,20 @@ See http://localhost:8080/
     git clone git@github.com:odscjames/docson.git odscjames-docson
     vagrant up odscjames-docson
     vagrant ssh odscjames-docson
-    
+
+# sisocs review
+
+    mkdir sisocs
+
+extract contents of the 2 compressed code folders into this
+
+    vagrant up sisocs
+    vagrant ssh sisocs
+    cd /vagrant
+    mysql -uroot -p --default-character-set=utf8 app
+
+Type rootpassword
+
+    SET names 'utf8';
+    SOURCE 20180627.sisocs_training.sql
+    exit
