@@ -84,3 +84,15 @@ Type rootpassword
     SET names 'utf8';
     SOURCE 20180627.sisocs_training.sql
     exit
+
+
+# open-contracting-extensions-data-collector
+
+    git clone git@github.com:open-contracting/extensions-data-collector.git open-contracting-extensions-data-collector
+    cd open-contracting-extensions-data-collector
+    virtualenv .ve -p python3
+    source .ve/bin/activate
+    pip3 install -r requirements.txt
+    pip3 install flake8
+    deactivate
+
