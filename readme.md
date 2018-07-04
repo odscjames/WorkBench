@@ -82,7 +82,7 @@ extract contents of the 2 compressed code folders into this
 Type rootpassword
 
     SET names 'utf8';
-    SOURCE 20180627.sisocs_training.sql
+    SOURCE /vagrant/20180627.sisocs_training.sql
     exit
 
 
