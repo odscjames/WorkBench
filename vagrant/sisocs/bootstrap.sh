@@ -8,6 +8,7 @@ apt-get update
 apt-get install -y apache2 mysql-server php php-mysql unzip libapache2-mod-php
 
 cp /vagrantconf/apache.conf /etc/apache2/sites-enabled/000-default.conf
+cp /vagrantconf/99-custom.ini /etc/php/7.0/apache2/conf.d/99-custom.ini
 /etc/init.d/apache2 restart
 
 
