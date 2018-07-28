@@ -99,5 +99,13 @@ Type rootpassword
 # bonobo
 
     mkdir bonobo
+    cd bonobo 
+    git clone git@github.com:python-bonobo/bonobo-sqlalchemy.git
+    git clone git@github.com:python-bonobo/bonobo.git
     vagrant up bonobo
     vagrant ssh bonobo
+    cd /vagrant
+    pip3 install -e bonobo -e bonobo-sqlalchemy
+
+
+
