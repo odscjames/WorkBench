@@ -96,3 +96,8 @@ Type rootpassword
     pip3 install flake8
     deactivate
 
+# bonobo
+
+    mkdir bonobo
+    vagrant up bonobo
+    vagrant ssh bonobo
