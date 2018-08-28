@@ -99,7 +99,7 @@ Type rootpassword
 # bonobo
 
     mkdir bonobo
-    cd bonobo 
+    cd bonobo
     git clone git@github.com:python-bonobo/bonobo-sqlalchemy.git
     git clone git@github.com:python-bonobo/bonobo.git
     vagrant up bonobo
@@ -107,5 +107,23 @@ Type rootpassword
     cd /vagrant
     pip3 install -e bonobo -e bonobo-sqlalchemy
 
+# fireproofbox-standard
+
+???
+
+# python3
+
+???
+
+# salttarget18
+
+???
+
+# jsonschema-info-table
 
 
+    vagrant up jsonschema-info-table
+    vagrant ssh jsonschema-info-table
+    cd /vagrant
+    pip3 install -e .
+  
