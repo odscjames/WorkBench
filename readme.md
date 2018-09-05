@@ -1,10 +1,10 @@
 ## Virtual Machines For Work
 
-# open-contracting-ocdsdata
+# open-contracting-kingfisher
 
-    git clone git@github.com:open-contracting/ocdsdata.git open-contracting-ocdsdata
-    vagrant up ocdsdata
-    vagrant ssh ocdsdata
+    git clone git@github.com:open-contracting/kingfisher.git open-contracting-ocdsdata
+    vagrant up open-contracting-kingfisher 
+    vagrant ssh open-contracting-kingfisher 
     cd /vagrant
     virtualenv .ve -p python3
     source .ve/bin/activate
