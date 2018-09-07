@@ -2,7 +2,7 @@
 
 # open-contracting-kingfisher
 
-    git clone git@github.com:open-contracting/kingfisher.git open-contracting-ocdsdata
+    git clone git@github.com:open-contracting/kingfisher.git open-contracting-kingfisher
     vagrant up open-contracting-kingfisher 
     vagrant ssh open-contracting-kingfisher 
     cd /vagrant
