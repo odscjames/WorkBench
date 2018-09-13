@@ -24,16 +24,16 @@ echo "localhost:5432:ocdskingfisher:ocdskingfisher:ocdskingfisher" > /home/vagra
 chown vagrant:vagrant /home/vagrant/.pgpass
 chmod 0600 /home/vagrant/.pgpass
 
-mkdir -p /home/vagrant/.config/ocdsdata
+mkdir -p /home/vagrant/.config/ocdskingfisher
 
-echo "[DBHOST]" > /home/vagrant/.config/ocdsdata/config.ini
-echo "HOSTNAME = localhost" >> /home/vagrant/.config/ocdsdata/config.ini
-echo "PORT = 5432" >> /home/vagrant/.config/ocdsdata/config.ini
-echo "USERNAME = ocdskingfisher" >> /home/vagrant/.config/ocdsdata/config.ini
-echo "PASSWORD = ocdskingfisher" >> /home/vagrant/.config/ocdsdata/config.ini
-echo "DBNAME = ocdskingfisher" >> /home/vagrant/.config/ocdsdata/config.ini
-echo "[DATA]" >> /home/vagrant/.config/ocdsdata/config.ini
-echo "DIR = /data" >> /home/vagrant/.config/ocdsdata/config.ini
+echo "[DBHOST]" > /home/vagrant/.config/ocdskingfisher/config.ini
+echo "HOSTNAME = localhost" >> /home/vagrant/.config/ocdskingfisher/config.ini
+echo "PORT = 5432" >> /home/vagrant/.config/ocdskingfisher/config.ini
+echo "USERNAME = ocdskingfisher" >> /home/vagrant/.config/ocdskingfisher/config.ini
+echo "PASSWORD = ocdskingfisher" >> /home/vagrant/.config/ocdskingfisher/config.ini
+echo "DBNAME = ocdskingfisher" >> /home/vagrant/.config/ocdskingfisher/config.ini
+echo "[DATA]" >> /home/vagrant/.config/ocdskingfisher/config.ini
+echo "DIR = /data" >> /home/vagrant/.config/ocdskingfisher/config.ini
 chown -R vagrant /home/vagrant/.config
 
 mkdir /data
