@@ -6,7 +6,7 @@ apt-get update
 apt-get install -y python3 python3-pip unzip chromium-browser
 
 # flatten-tool needs this
-apt-get install libpython3.5-testsuite
+apt-get install libpython3.6-testsuite
 
 # translation needs this
 apt-get install gettext
