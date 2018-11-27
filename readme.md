@@ -3,8 +3,8 @@
 # open-contracting-kingfisher
 
     git clone git@github.com:open-contracting/kingfisher.git open-contracting-kingfisher
-    vagrant up open-contracting-kingfisher 
-    vagrant ssh open-contracting-kingfisher 
+    vagrant up open-contracting-kingfisher
+    vagrant ssh open-contracting-kingfisher
     cd /vagrant
     virtualenv .ve -p python3
     source .ve/bin/activate
@@ -127,4 +127,18 @@ Type rootpassword
     vagrant ssh jsonschema-info-table
     cd /vagrant
     pip3 install -e .
-  
+
+
+# saltrunner
+
+To actually make this work, you also need to add to salt-config/master
+
+
+    pki_dir: /home/vagrant/pki-dir
+    cachedir: /home/vagrant/cache-dir
+
+And for each host you want to use, you need to change salt-config/roster to
+
+    xyz:
+        host: xyz.default.opendataservices.uk0.bigv.io
+        priv: /home/vagrant/.ssh/id_rsa
