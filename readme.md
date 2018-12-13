@@ -3,6 +3,7 @@
 # open-contracting-kingfisher-rhs
 
     git clone git@github.com:open-contracting/kingfisher.git open-contracting-kingfisher-rhs
+    git clone git@github.com:open-contracting/kingfisher.git open-contracting-kingfisher-lhs
     vagrant up open-contracting-kingfisher-rhs
     vagrant ssh open-contracting-kingfisher-rhs
     cd /vagrant

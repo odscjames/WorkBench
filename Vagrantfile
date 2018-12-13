@@ -35,9 +35,11 @@ Vagrant.configure(2) do |config|
       config.vm.box = "ubuntu/bionic64"
 
       config.vm.network "forwarded_port", guest: 9090, host: 9090
-      config.vm.network "forwarded_port", guest: 80, host: 8080
+      config.vm.network "forwarded_port", guest: 8080, host: 8080
 
       config.vm.synced_folder "open-contracting-kingfisher-rhs/", "/vagrant",  :owner=> 'ubuntu', :group=>'users', :mount_options => ['dmode=777', 'fmode=777']
+      config.vm.synced_folder "open-contracting-kingfisher-lhs/", "/vagrant-lhs",  :owner=> 'ubuntu', :group=>'users', :mount_options => ['dmode=777', 'fmode=777']
+
 
       config.vm.provider "virtualbox" do |vb|
          # Display the VirtualBox GUI when booting the machine

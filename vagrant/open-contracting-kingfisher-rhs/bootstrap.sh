@@ -32,6 +32,9 @@ echo "PORT = 5432" >> /home/vagrant/.config/ocdskingfisher/config.ini
 echo "USERNAME = ocdskingfisher" >> /home/vagrant/.config/ocdskingfisher/config.ini
 echo "PASSWORD = ocdskingfisher" >> /home/vagrant/.config/ocdskingfisher/config.ini
 echo "DBNAME = ocdskingfisher" >> /home/vagrant/.config/ocdskingfisher/config.ini
+echo "[WEB]" >> /home/vagrant/.config/ocdskingfisher/config.ini
+echo "API_KEYS = cat,dog" >> /home/vagrant/.config/ocdskingfisher/config.ini
+
 chown -R vagrant /home/vagrant/.config
 
 mkdir /data
