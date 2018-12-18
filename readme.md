@@ -14,7 +14,7 @@
     source .ve/bin/activate
     pip3 install -r requirements.txt
     pip3 install flake8 pytest
-    DB_URI=postgresql://test:test@localhost:5432/test pytest tests/
+    KINGFISHER_PROCESS_DB_URI=postgresql://test:test@localhost:5432/test pytest tests/
     deactivate
 
 # open-contracting-extension_registry

@@ -24,16 +24,16 @@ echo "localhost:5432:ocdskingfisher:ocdskingfisher:ocdskingfisher" > /home/vagra
 chown vagrant:vagrant /home/vagrant/.pgpass
 chmod 0600 /home/vagrant/.pgpass
 
-mkdir -p /home/vagrant/.config/ocdskingfisher
+mkdir -p /home/vagrant/.config/ocdskingfisher-process
 
-echo "[DBHOST]" > /home/vagrant/.config/ocdskingfisher/config.ini
-echo "HOSTNAME = localhost" >> /home/vagrant/.config/ocdskingfisher/config.ini
-echo "PORT = 5432" >> /home/vagrant/.config/ocdskingfisher/config.ini
-echo "USERNAME = ocdskingfisher" >> /home/vagrant/.config/ocdskingfisher/config.ini
-echo "PASSWORD = ocdskingfisher" >> /home/vagrant/.config/ocdskingfisher/config.ini
-echo "DBNAME = ocdskingfisher" >> /home/vagrant/.config/ocdskingfisher/config.ini
-echo "[WEB]" >> /home/vagrant/.config/ocdskingfisher/config.ini
-echo "API_KEYS = cat,dog" >> /home/vagrant/.config/ocdskingfisher/config.ini
+echo "[DBHOST]" > /home/vagrant/.config/ocdskingfisher-process/config.ini
+echo "HOSTNAME = localhost" >> /home/vagrant/.config/ocdskingfisher-process/config.ini
+echo "PORT = 5432" >> /home/vagrant/.config/ocdskingfisher-process/config.ini
+echo "USERNAME = ocdskingfisher" >> /home/vagrant/.config/ocdskingfisher-process/config.ini
+echo "PASSWORD = ocdskingfisher" >> /home/vagrant/.config/ocdskingfisher-process/config.ini
+echo "DBNAME = ocdskingfisher" >> /home/vagrant/.config/ocdskingfisher-process/config.ini
+echo "[WEB]" >> /home/vagrant/.config/ocdskingfisher-process/config.ini
+echo "API_KEYS = cat,dog" >> /home/vagrant/.config/ocdskingfisher-process/config.ini
 
 chown -R vagrant /home/vagrant/.config
 

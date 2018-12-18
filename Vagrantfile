@@ -14,6 +14,7 @@ Vagrant.configure(2) do |config|
         config.vm.synced_folder "open-contracting-kingfisher/", "/vagrant",  :owner=> 'ubuntu', :group=>'users', :mount_options => ['dmode=777', 'fmode=777']
         config.vm.synced_folder "open-contracting-kingfisher-process/", "/vagrant-process",  :owner=> 'ubuntu', :group=>'users', :mount_options => ['dmode=777', 'fmode=777']
         config.vm.synced_folder "open-contracting-kingfisher-scrape/", "/vagrant-scrape",  :owner=> 'ubuntu', :group=>'users', :mount_options => ['dmode=777', 'fmode=777']
+        config.vm.synced_folder "vagrant/open-contracting-kingfisher/", "/vagrantconf",  :owner=> 'ubuntu', :group=>'users', :mount_options => ['dmode=777', 'fmode=777']
 
 
         config.vm.provider "virtualbox" do |vb|
