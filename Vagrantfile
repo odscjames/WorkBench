@@ -2,34 +2,42 @@ Vagrant.configure(2) do |config|
 
   config.vm.box = "ubuntu/xenial64"
 
-  config.vm.define "open-contracting-kingfisher" do |normal|
 
-      config.vm.box = "ubuntu/bionic64"
 
-      config.vm.network "forwarded_port", guest: 9090, host: 9090
-      config.vm.network "forwarded_port", guest: 80, host: 8080
+    config.vm.define "open-contracting-kingfisher" do |normal|
 
-      config.vm.synced_folder "open-contracting-kingfisher/", "/vagrant",  :owner=> 'ubuntu', :group=>'users', :mount_options => ['dmode=777', 'fmode=777']
+        config.vm.box = "ubuntu/bionic64"
 
-      config.vm.provider "virtualbox" do |vb|
-         # Display the VirtualBox GUI when booting the machine
-         vb.gui = false
+        config.vm.network "forwarded_port", guest: 9090, host: 9090
+        config.vm.network "forwarded_port", guest: 8080, host: 8080
 
-        # Customize the amount of memory on the VM:
-        vb.memory = "2048"
+        config.vm.synced_folder "open-contracting-kingfisher/", "/vagrant",  :owner=> 'ubuntu', :group=>'users', :mount_options => ['dmode=777', 'fmode=777']
+        config.vm.synced_folder "open-contracting-kingfisher-process/", "/vagrant-process",  :owner=> 'ubuntu', :group=>'users', :mount_options => ['dmode=777', 'fmode=777']
+        config.vm.synced_folder "open-contracting-kingfisher-scrape/", "/vagrant-scrape",  :owner=> 'ubuntu', :group=>'users', :mount_options => ['dmode=777', 'fmode=777']
 
-        # https://github.com/boxcutter/ubuntu/issues/82#issuecomment-260902424
-        vb.customize [
-            "modifyvm", :id,
-            "--cableconnected1", "on",
-        ]
 
-      end
+        config.vm.provider "virtualbox" do |vb|
+           # Display the VirtualBox GUI when booting the machine
+           vb.gui = false
 
-      config.vm.provision :shell, path: "vagrant/open-contracting-kingfisher/bootstrap.sh"
+          # Customize the amount of memory on the VM:
+          vb.memory = "2048"
 
-  end
+          # https://github.com/boxcutter/ubuntu/issues/82#issuecomment-260902424
+          vb.customize [
+              "modifyvm", :id,
+              "--cableconnected1", "on",
+          ]
 
+        end
+
+        config.vm.provision :shell, path: "vagrant/open-contracting-kingfisher/bootstrap.sh"
+
+    end
+
+
+
+  #### open-contracting-kingfisher-rhs IS LEFT SO IT CAN BE DELETED FROM ALL WORKERS MACHINES ONLY! DONT USE!
   config.vm.define "open-contracting-kingfisher-rhs" do |normal|
 
       config.vm.box = "ubuntu/bionic64"
@@ -56,7 +64,6 @@ Vagrant.configure(2) do |config|
 
       end
 
-      config.vm.provision :shell, path: "vagrant/open-contracting-kingfisher-rhs/bootstrap.sh"
 
   end
     config.vm.define "open-contracting-extension_registry" do |normal|

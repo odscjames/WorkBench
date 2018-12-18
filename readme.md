@@ -1,25 +1,15 @@
 ## Virtual Machines For Work
 
-# open-contracting-kingfisher-rhs
-
-    git clone git@github.com:open-contracting/kingfisher.git open-contracting-kingfisher-rhs
-    git clone git@github.com:open-contracting/kingfisher.git open-contracting-kingfisher-lhs
-    vagrant up open-contracting-kingfisher-rhs
-    vagrant ssh open-contracting-kingfisher-rhs
-    cd /vagrant
-    virtualenv .ve -p python3
-    source .ve/bin/activate
-    pip3 install -r requirements.txt
-    pip3 install flake8
-    DB_URI=postgresql://test:test@localhost:5432/test pytest ocdskingfisher
-    deactivate
+# open-contracting-k
 
 # open-contracting-kingfisher
 
+    git clone git@github.com:open-contracting/kingfisher-scrape.git open-contracting-kingfisher-scrape
+    git clone git@github.com:open-contracting/kingfisher-process.git open-contracting-kingfisher-process
     git clone git@github.com:open-contracting/kingfisher.git open-contracting-kingfisher
     vagrant up open-contracting-kingfisher
     vagrant ssh open-contracting-kingfisher
-    cd /vagrant
+    cd /vagrant-process
     virtualenv .ve -p python3
     source .ve/bin/activate
     pip3 install -r requirements.txt
