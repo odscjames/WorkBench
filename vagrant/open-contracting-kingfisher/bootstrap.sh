@@ -6,7 +6,8 @@ echo "en_GB.UTF-8 UTF-8" >> /etc/locale.gen
 locale-gen
 
 apt-get update
-apt-get install -y python3 python3-pip postgresql-10
+apt-get install -y python3 python3-pip postgresql-10 uwsgi apache2 libapache2-mod-proxy-uwsgi uwsgi-plugin-python3
+
 
 sudo su --login -c "psql -c \"CREATE USER ocdskingfisher WITH PASSWORD 'ocdskingfisher';\"" postgres
 sudo su --login -c "psql -c \"CREATE DATABASE ocdskingfisher WITH OWNER ocdskingfisher ENCODING 'UTF8'  LC_COLLATE='en_GB.UTF-8' LC_CTYPE='en_GB.UTF-8'  TEMPLATE=template0 ;\"" postgres
@@ -39,3 +40,13 @@ chown -R vagrant /home/vagrant/.config
 
 mkdir /data
 chown vagrant /data
+
+
+cp /vagrantconf/apache.conf /etc/apache2/sites-enabled/kingfisherprocess.conf
+a2enmod  proxy proxy_uwsgi
+systemctl restart apache2
+
+cp /vagrantconf/uwsgi.ini /etc/uwsgi/apps-enabled/kingfisherprocess.ini
+cp /vagrantconf/wsgi.py /vagrant-process/
+systemctl restart uwsgi
+
