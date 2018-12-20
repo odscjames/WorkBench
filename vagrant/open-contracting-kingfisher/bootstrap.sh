@@ -41,15 +41,18 @@ chown -R vagrant /home/vagrant/.config
 mkdir /data
 chown vagrant /data
 
+htpasswd -c -b /etc/apache2/auth-user-file cat dog
 
 cp /vagrantconf/apache.conf /etc/apache2/sites-enabled/kingfisherprocess.conf
-a2enmod  proxy proxy_uwsgi
+cp /vagrantconf/apache-scrapyd.conf /etc/apache2/sites-enabled/scrapyd.conf
+a2enmod  proxy proxy_uwsgi proxy_http
 systemctl restart apache2
 
 cp /vagrantconf/uwsgi.ini /etc/uwsgi/apps-enabled/kingfisherprocess.ini
 cp /vagrantconf/wsgi.py /vagrant-process/
 systemctl restart uwsgi
 
+adduser --disabled-password --gecos "" ocdskfs
 
 mkdir /scrapyd
 chown ocdskfs /scrapyd
@@ -59,10 +62,6 @@ source .ve/bin/activate; pip3 install scrapyd
 
 mkdir /etc/scrapyd/
 cp /vagrantconf/scrapyd.ini /etc/scrapyd/scrapyd.conf
-
-
-adduser --disabled-password --gecos "" ocdskfs
-
 
 mkdir /scrapyd/dir_eggs
 mkdir /scrapyd/dir_dbs
