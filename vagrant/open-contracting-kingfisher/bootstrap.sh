@@ -6,7 +6,7 @@ echo "en_GB.UTF-8 UTF-8" >> /etc/locale.gen
 locale-gen
 
 apt-get update
-apt-get install -y python3 python3-pip postgresql-10 uwsgi apache2 libapache2-mod-proxy-uwsgi uwsgi-plugin-python3
+apt-get install -y python3 python3-pip postgresql-10 uwsgi apache2 libapache2-mod-proxy-uwsgi uwsgi-plugin-python3 supervisor
 
 
 sudo su --login -c "psql -c \"CREATE USER ocdskingfisher WITH PASSWORD 'ocdskingfisher';\"" postgres
@@ -50,3 +50,31 @@ cp /vagrantconf/uwsgi.ini /etc/uwsgi/apps-enabled/kingfisherprocess.ini
 cp /vagrantconf/wsgi.py /vagrant-process/
 systemctl restart uwsgi
 
+
+mkdir /scrapyd
+chown ocdskfs /scrapyd
+cd /scrapyd
+virtualenv .ve -p python3
+source .ve/bin/activate; pip3 install scrapyd
+
+mkdir /etc/scrapyd/
+cp /vagrantconf/scrapyd.ini /etc/scrapyd/scrapyd.conf
+
+
+adduser --disabled-password --gecos "" ocdskfs
+
+
+mkdir /scrapyd/dir_eggs
+mkdir /scrapyd/dir_dbs
+mkdir /scrapyd/dir_logs
+mkdir /scrapyd/dir_items
+chown ocdskfs /scrapyd/dir_eggs
+chown ocdskfs /scrapyd/dir_dbs
+chown ocdskfs /scrapyd/dir_logs
+chown ocdskfs /scrapyd/dir_items
+
+
+cp /vagrantconf/supervisor.conf /etc/supervisor/conf.d/scrapyd.conf
+cp /vagrantconf/scrapyd.sh /scrapyd/scrapyd.sh
+chmod a+x /scrapyd/scrapyd.sh
+/etc/init.d/supervisor restart
