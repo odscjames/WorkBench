@@ -15,7 +15,7 @@
     pip3 install -r requirements.txt
     pip3 install flake8 pytest
     KINGFISHER_PROCESS_DB_URI=postgresql://test:test@localhost:5432/test pytest tests/
-    FLASK_APP=ocdskingfisherprocess.web.app KINGFISHER_PROCESS_WEB_API_KEYS=cat flask run --host 0 --port 9090
+    FLASK_APP=ocdskingfisherprocess.web.app FLASK_ENV=development KINGFISHER_PROCESS_WEB_API_KEYS=cat flask run --host 0 --port 9090
     deactivate
 
 # open-contracting-extension_registry
