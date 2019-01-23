@@ -58,7 +58,7 @@ mkdir /scrapyd
 chown ocdskfs /scrapyd
 cd /scrapyd
 virtualenv .ve -p python3
-source .ve/bin/activate; pip3 install scrapyd
+source .ve/bin/activate; pip3 install scrapyd requests
 
 mkdir /etc/scrapyd/
 cp /vagrantconf/scrapyd.ini /etc/scrapyd/scrapyd.conf
@@ -67,10 +67,12 @@ mkdir /scrapyd/dir_eggs
 mkdir /scrapyd/dir_dbs
 mkdir /scrapyd/dir_logs
 mkdir /scrapyd/dir_items
+mkdir /scrapyd/data
 chown ocdskfs /scrapyd/dir_eggs
 chown ocdskfs /scrapyd/dir_dbs
 chown ocdskfs /scrapyd/dir_logs
 chown ocdskfs /scrapyd/dir_items
+chown ocdskfs /scrapyd/data
 
 
 cp /vagrantconf/supervisor.conf /etc/supervisor/conf.d/scrapyd.conf
