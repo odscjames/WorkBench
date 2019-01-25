@@ -76,6 +76,4 @@ chown ocdskfs /scrapyd/data
 
 
 cp /vagrantconf/supervisor.conf /etc/supervisor/conf.d/scrapyd.conf
-cp /vagrantconf/scrapyd.sh /scrapyd/scrapyd.sh
-chmod a+x /scrapyd/scrapyd.sh
 /etc/init.d/supervisor restart
