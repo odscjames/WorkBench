@@ -6,7 +6,7 @@ echo "en_GB.UTF-8 UTF-8" >> /etc/locale.gen
 locale-gen
 
 apt-get update
-apt-get install -y python3 python3-pip postgresql-10 uwsgi apache2 libapache2-mod-proxy-uwsgi uwsgi-plugin-python3 supervisor
+apt-get install -y python3 python3-pip postgresql-10 uwsgi apache2 libapache2-mod-proxy-uwsgi uwsgi-plugin-python3 supervisor redis
 
 
 sudo su --login -c "psql -c \"CREATE USER ocdskingfisher WITH PASSWORD 'ocdskingfisher';\"" postgres
