@@ -5,7 +5,7 @@ wget -O - https://repo.saltstack.com/apt/ubuntu/18.04/amd64/2019.2/SALTSTACK-GPG
 echo "deb http://repo.saltstack.com/apt/ubuntu/18.04/amd64/2019.2 bionic main" >> /etc/apt/sources.list.d/saltstack.list
 
 apt-get update
-apt-get install -y salt-ssh python-minimal
+apt-get install -y salt-ssh python3-minimal
 
 cp /home/vagrant/parent-ssh/id_rsa /home/vagrant/.ssh/
 chmod 0600 /home/vagrant/.ssh/id_rsa
