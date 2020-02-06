@@ -23,7 +23,7 @@ apt-get install libpython3.6-testsuite
 apt-get install gettext
 
 
-pip3 install black isort flake8 pytest virtualenv tox Sphinx
+pip3 install black isort flake8 pytest virtualenv tox Sphinx sphinx_rtd_theme
 
 
 # Install Google Clasp for App Script
