@@ -10,10 +10,10 @@ apt-get update
 # install default Python 3.6 for bionic and other libs
 DEBIAN_FRONTEND=noninteractive apt-get install -y python3 python3-pip unzip chromium-browser
 # Install all the Pythons!
-DEBIAN_FRONTEND=noninteractive apt-get install -y python3.4
-DEBIAN_FRONTEND=noninteractive apt-get install -y python3.5
-DEBIAN_FRONTEND=noninteractive apt-get install -y python3.7
-DEBIAN_FRONTEND=noninteractive apt-get install -y python3.8
+DEBIAN_FRONTEND=noninteractive apt-get install -y python3.4 python3.4-venv
+DEBIAN_FRONTEND=noninteractive apt-get install -y python3.5 python3.5-venv
+DEBIAN_FRONTEND=noninteractive apt-get install -y python3.7 python3.6-venv
+DEBIAN_FRONTEND=noninteractive apt-get install -y python3.8 python3.8-venv
 
 
 # flatten-tool needs this
