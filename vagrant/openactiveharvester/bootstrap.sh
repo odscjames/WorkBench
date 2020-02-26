@@ -26,6 +26,6 @@ wget -O /home/vagrant/node.tar.xz https://nodejs.org/dist/v13.9.0/node-v13.9.0-l
 cd /home/vagrant/
 tar xf node.tar.xz
 mv node-v* node
-echo "export PATH=\"$HOME/node/bin:$PATH\"" >> /home/vagrant/.bashrc 
+echo "export PATH=\"/home/vagrant/node/bin:\$PATH\"" >> /home/vagrant/.bashrc 
 
 
