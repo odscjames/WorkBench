@@ -460,7 +460,7 @@ Vagrant.configure(2) do |config|
 
 
 
-            openactiveharvester.vm.synced_folder "openactive-harvester", "/vagrant",  :owner=> 'ubuntu', :group=>'users', :mount_options => ['dmode=777', 'fmode=777']
+            openactiveharvester.vm.synced_folder ".", "/vagrant",  :owner=> 'ubuntu', :group=>'users', :mount_options => ['dmode=777', 'fmode=777']
 
             openactiveharvester.vm.provider "virtualbox" do |vb|
                # Display the VirtualBox GUI when booting the machine
