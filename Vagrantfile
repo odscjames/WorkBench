@@ -449,4 +449,36 @@ Vagrant.configure(2) do |config|
 
         	end
 
+
+
+        config.vm.define "openactiveharvester" do |openactiveharvester|
+
+          openactiveharvester.vm.box = "ubuntu/bionic64"
+
+          openactiveharvester.vm.network "forwarded_port", guest: 9200, host: 9200
+           openactiveharvester.vm.network "forwarded_port", guest: 9300, host: 9300
+
+
+
+            openactiveharvester.vm.synced_folder "openactive-harvester", "/vagrant",  :owner=> 'ubuntu', :group=>'users', :mount_options => ['dmode=777', 'fmode=777']
+
+            openactiveharvester.vm.provider "virtualbox" do |vb|
+               # Display the VirtualBox GUI when booting the machine
+               vb.gui = false
+
+              # Customize the amount of memory on the VM:
+              vb.memory = "4096"
+
+              # https://github.com/boxcutter/ubuntu/issues/82#issuecomment-260902424
+              vb.customize [
+                  "modifyvm", :id,
+                  "--cableconnected1", "on",
+              ]
+
+            end
+
+            openactiveharvester.vm.provision :shell, path: "vagrant/openactiveharvester/bootstrap.sh"
+
+        end
+
 end
