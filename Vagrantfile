@@ -457,6 +457,7 @@ Vagrant.configure(2) do |config|
 
           openactiveharvester.vm.network "forwarded_port", guest: 9200, host: 9200
            openactiveharvester.vm.network "forwarded_port", guest: 9300, host: 9300
+           openactiveharvester.vm.network "forwarded_port", guest: 8000, host: 8000
 
 
 
