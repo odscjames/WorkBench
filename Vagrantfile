@@ -451,7 +451,7 @@ Vagrant.configure(2) do |config|
 
 
 
-        config.vm.define "openactiveharvester" do |openactiveharvester|
+        config.vm.define "openactive" do |openactiveharvester|
 
           openactiveharvester.vm.box = "ubuntu/bionic64"
 
@@ -478,7 +478,7 @@ Vagrant.configure(2) do |config|
 
             end
 
-            openactiveharvester.vm.provision :shell, path: "vagrant/openactiveharvester/bootstrap.sh"
+            openactiveharvester.vm.provision :shell, path: "vagrant/openactive/bootstrap.sh"
 
         end
 

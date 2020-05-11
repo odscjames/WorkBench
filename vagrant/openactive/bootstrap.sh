@@ -3,6 +3,21 @@
 set -e
 
 
+################ POSTGRESQL
+
+echo "en_GB.UTF-8 UTF-8" >> /etc/locale.gen
+
+locale-gen
+
+apt-get update
+apt-get install -y postgresql-10
+
+sudo su --login -c "psql -c \"CREATE USER app WITH PASSWORD 'app';\"" postgres
+sudo su --login -c "psql -c \"CREATE DATABASE app WITH OWNER app ENCODING 'UTF8'  LC_COLLATE='en_GB.UTF-8' LC_CTYPE='en_GB.UTF-8'  TEMPLATE=template0 ;\"" postgres
+
+sudo su --login -c "psql -c \"CREATE USER test WITH PASSWORD 'test';\"" postgres
+sudo su --login -c "psql -c \"CREATE DATABASE test WITH OWNER test ENCODING 'UTF8'  LC_COLLATE='en_GB.UTF-8' LC_CTYPE='en_GB.UTF-8'  TEMPLATE=template0 ;\"" postgres
+
 
 ################ ELASTICSEARCH
 
